@@ -74,12 +74,8 @@ jobs:
         with:
           ruby-version: .ruby-version
           bundler-cache: true
-      - name: Workaround for net-pop dependency conflict
-        run: |
-          if grep -q net-pop Gemfile.lock; then
-            echo "Found net-pop in lockfile. Removing lockfile to avoid conflict."
-            rm Gemfile.lock
-          fi
+      - name: Install dependencies
+        run: bin/bundle install --jobs 4 --retry 3
 
       - name: Run tests
         env:

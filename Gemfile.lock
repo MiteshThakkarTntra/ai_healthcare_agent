@@ -376,6 +376,7 @@ DEPENDENCIES
   importmap-rails
   jbuilder
   kamal
+  net-pop (~> 0.1.2)
   propshaft
   puma (>= 5.0)
   rails (~> 8.0.2)
